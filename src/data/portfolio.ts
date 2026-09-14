@@ -1,4 +1,4 @@
-import work1 from "@/assets/work-1.jpg";
+import spiderVersePoster from "@/assets/spider-verse-poster.png.asset.json";
 import work2 from "@/assets/work-2.jpg";
 import work3 from "@/assets/work-3.jpg";
 import work4 from "@/assets/work-4.jpg";
@@ -16,13 +16,13 @@ export interface Artwork {
 
 export const artworks: Artwork[] = [
   {
-    id: "geometric-soul",
-    title: "Geometric Soul",
-    category: "Abstract Poster",
+    id: "spider-verse-poster",
+    title: "Spider-Man: Into the Spider-Verse",
+    category: "Fan Poster",
     year: "2025",
     description:
-      "A study in fragmentation and form, blending portraiture with bold geometric shapes in violet gradients.",
-    image: work1,
+      "A comic-inspired collage poster celebrating the multiverse, mixing halftone textures, bold typography, and iconic characters.",
+    image: spiderVersePoster.url,
     aspectRatio: "aspect-square",
   },
   {

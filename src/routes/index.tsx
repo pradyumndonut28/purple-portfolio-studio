@@ -13,9 +13,9 @@ import { Instagram, Mail, ArrowRight, Sparkles } from "lucide-react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Tinu.fr — Graphic Design Portfolio" },
+      { title: "Pradyumn Mathur — Graphic Design Portfolio" },
       { name: "description", content: "Portfolio of a young graphic designer exploring visual identity, typography, and digital art." },
-      { property: "og:title", content: "Tinu.fr — Graphic Design Portfolio" },
+      { property: "og:title", content: "Pradyumn Mathur — Graphic Design Portfolio" },
       { property: "og:description", content: "Portfolio of a young graphic designer exploring visual identity, typography, and digital art." },
     ],
   }),

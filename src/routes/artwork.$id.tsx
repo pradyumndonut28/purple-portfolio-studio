@@ -12,7 +12,7 @@ export const Route = createFileRoute("/artwork/$id")({
     return artwork;
   },
   head: ({ loaderData }) => {
-    const title = loaderData ? `${loaderData.title} — Tinu.fr` : "Artwork — Tinu.fr";
+    const title = loaderData ? `${loaderData.title} — Pradyumn Mathur` : "Artwork — Pradyumn Mathur";
     const description = loaderData?.description ?? "Graphic design artwork by Pradyumn Mathur.";
     return {
       meta: [
@@ -57,8 +57,8 @@ function ArtworkDetail() {
               {/* Watermark overlay */}
               <div className="pointer-events-none absolute inset-0 watermark-pattern" />
               <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-                <span className="rotate-[-12deg] select-none text-5xl font-black uppercase tracking-widest text-foreground/10 sm:text-7xl lg:text-8xl">
-                  TINU.FR
+                <span className="rotate-[-12deg] select-none whitespace-nowrap text-5xl font-black uppercase tracking-widest text-foreground/10 sm:text-7xl lg:text-8xl">
+                  PRADYUMN MATHUR
                 </span>
               </div>
             </div>

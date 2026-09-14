@@ -128,7 +128,7 @@ function Work() {
             Projects & experiments
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Click any piece to view it with a watermark in a new tab.
+            Click any piece to view it up close with its watermark.
           </p>
         </div>
 
@@ -145,8 +145,13 @@ function Work() {
                 <Link
                   to="/artwork/$id"
                   params={{ id: artwork.id }}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  viewTransition
+                  onClick={(e) => {
+                    const img = e.currentTarget.querySelector("img");
+                    if (img) {
+                      img.style.viewTransitionName = `artwork-${artwork.id}`;
+                    }
+                  }}
                   className="group block overflow-hidden rounded-2xl border border-border/60 bg-card shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-ring"
                 >
                   <div className="relative overflow-hidden">

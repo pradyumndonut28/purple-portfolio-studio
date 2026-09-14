@@ -1,4 +1,4 @@
-import { createFileRoute, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getArtworkById } from "@/data/portfolio";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Instagram, Mail } from "lucide-react";
@@ -34,13 +34,14 @@ function ArtworkDetail() {
   return (
     <div className="min-h-screen bg-background px-4 py-8 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-5xl">
-        <a
-          href="/"
+        <Link
+          to="/"
+          viewTransition
           className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to portfolio
-        </a>
+        </Link>
 
         <div className="mt-8 grid gap-10 lg:grid-cols-[1fr_320px]">
           <div className="relative overflow-hidden rounded-3xl border border-border/60 bg-card shadow-2xl">
@@ -51,6 +52,7 @@ function ArtworkDetail() {
                 width={1024}
                 height={1024}
                 className="aspect-square w-full object-cover"
+                style={{ viewTransitionName: `artwork-${artwork.id}` }}
               />
               {/* Watermark overlay */}
               <div className="pointer-events-none absolute inset-0 watermark-pattern" />

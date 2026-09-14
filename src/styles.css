@@ -188,7 +188,11 @@
 }
 
 @utility bg-gradient-radial {
-  background: radial-gradient(circle at 30% 30%, var(--color-violet-200 / 0.25), transparent 50%);
+  background: radial-gradient(
+    circle at 30% 30%,
+    color-mix(in oklab, var(--color-violet-200) 25%, transparent),
+    transparent 50%
+  );
 }
 
 @utility watermark-pattern {
@@ -196,7 +200,7 @@
     -45deg,
     transparent,
     transparent 80px,
-    var(--color-foreground / 0.04) 80px,
-    var(--color-foreground / 0.04) 82px
+    color-mix(in oklab, var(--color-foreground) 4%, transparent) 80px,
+    color-mix(in oklab, var(--color-foreground) 4%, transparent) 82px
   );
 }

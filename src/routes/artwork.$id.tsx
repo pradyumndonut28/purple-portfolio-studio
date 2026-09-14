@@ -11,16 +11,20 @@ export const Route = createFileRoute("/artwork/$id")({
     }
     return artwork;
   },
-  head: ({ loaderData }) => ({
-    meta: [
-      { title: `${loaderData.title} — Tinu.fr` },
-      { name: "description", content: loaderData.description },
-      { property: "og:title", content: `${loaderData.title} — Tinu.fr` },
-      { property: "og:description", content: loaderData.description },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: ({ loaderData }) => {
+    const title = loaderData ? `${loaderData.title} — Tinu.fr` : "Artwork — Tinu.fr";
+    const description = loaderData?.description ?? "Graphic design artwork by Pradyumn Mathur.";
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
+      ],
+    };
+  },
   component: ArtworkDetail,
 });
 

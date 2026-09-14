@@ -82,10 +82,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Tinu.fr — Graphic Design Portfolio" },
+      { title: "Pradyumn Mathur — Graphic Design Portfolio" },
       { name: "description", content: "Portfolio of a young graphic designer exploring visual identity, typography, and digital art." },
       { name: "author", content: "Pradyumn Mathur" },
-      { property: "og:title", content: "Tinu.fr — Graphic Design Portfolio" },
+      { property: "og:title", content: "Pradyumn Mathur — Graphic Design Portfolio" },
       { property: "og:description", content: "Portfolio of a young graphic designer exploring visual identity, typography, and digital art." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -134,7 +134,7 @@ function Header() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-2">
           <span className="text-xl font-bold tracking-tight text-foreground">
-            tinu<span className="text-primary">.</span>fr
+            Pradyumn
           </span>
         </Link>
 
@@ -193,7 +193,7 @@ function Footer() {
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <div className="text-center sm:text-left">
             <p className="text-lg font-semibold text-foreground">
-              tinu<span className="text-primary">.</span>fr
+              Pradyumn
             </p>
             <p className="mt-1 text-sm text-muted-foreground">
               Graphic design portfolio by Pradyumn Mathur

@@ -38,6 +38,16 @@ export const artworks: Artwork[] = [
     aspectRatio: "aspect-[12/17]",
   },
   {
+    id: "rx-100-poster",
+    title: "RX-100",
+    category: "Brand Poster",
+    year: "2026",
+    description:
+      "A vintage Yamaha RX-100 poster blending rustic Indian scenery with bold typography — celebrating an old soul with a wild heart.",
+    image: rx100Poster.url,
+    aspectRatio: "aspect-[4/5]",
+  },
+  {
     id: "type-harmony",
     title: "Type Harmony",
     category: "Typography",

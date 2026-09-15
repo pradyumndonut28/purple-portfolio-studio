@@ -1,5 +1,6 @@
 import spiderVersePoster from "@/assets/spider-verse-poster.png.asset.json";
 import hrithikRoshanTribute from "@/assets/hrithik-roshan-tribute.png.asset.json";
+import rx100Poster from "@/assets/rx-100-poster.png.asset.json";
 import work2 from "@/assets/work-2.jpg";
 import work3 from "@/assets/work-3.jpg";
 import work4 from "@/assets/work-4.jpg";

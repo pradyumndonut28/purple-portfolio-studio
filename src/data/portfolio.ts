@@ -1,5 +1,6 @@
 import spiderVersePoster from "@/assets/spider-verse-poster.png.asset.json";
 import hrithikRoshanTribute from "@/assets/hrithik-roshan-tribute.png.asset.json";
+import rx100Poster from "@/assets/rx-100-poster.png.asset.json";
 import work2 from "@/assets/work-2.jpg";
 import work3 from "@/assets/work-3.jpg";
 import work4 from "@/assets/work-4.jpg";
@@ -35,6 +36,16 @@ export const artworks: Artwork[] = [
       "A cinematic tribute poster celebrating Hrithik Roshan’s journey, combining layered portraiture, bold gradient typography, and an inspirational quote.",
     image: hrithikRoshanTribute.url,
     aspectRatio: "aspect-[12/17]",
+  },
+  {
+    id: "rx-100-poster",
+    title: "RX-100",
+    category: "Brand Poster",
+    year: "2026",
+    description:
+      "A vintage Yamaha RX-100 poster blending rustic Indian scenery with bold typography — celebrating an old soul with a wild heart.",
+    image: rx100Poster.url,
+    aspectRatio: "aspect-[4/5]",
   },
   {
     id: "type-harmony",

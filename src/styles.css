@@ -204,3 +204,72 @@
     color-mix(in oklab, var(--color-foreground) 4%, transparent) 82px
   );
 }
+
+.contact-aurora {
+  --pointer-x: 50%;
+  --pointer-y: 50%;
+  --shift-x: 0px;
+  --shift-y: 0px;
+  isolation: isolate;
+}
+
+.contact-aurora__wash,
+.contact-aurora__light,
+.contact-aurora__grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.contact-aurora__wash {
+  inset: -18%;
+  background:
+    radial-gradient(ellipse 48% 58% at 22% 24%, color-mix(in oklab, var(--color-primary) 28%, transparent), transparent 72%),
+    radial-gradient(ellipse 52% 45% at 82% 78%, color-mix(in oklab, var(--color-violet-300) 24%, transparent), transparent 74%);
+  filter: blur(30px);
+  transform: translate3d(var(--shift-x), var(--shift-y), 0) scale(1.08);
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  animation: contact-aurora-breathe 8s ease-in-out infinite alternate;
+}
+
+.contact-aurora__light {
+  background: radial-gradient(
+    circle 260px at var(--pointer-x) var(--pointer-y),
+    color-mix(in oklab, var(--color-violet-200) 42%, transparent),
+    color-mix(in oklab, var(--color-primary) 14%, transparent) 45%,
+    transparent 72%
+  );
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+.contact-aurora:hover .contact-aurora__light {
+  opacity: 1;
+}
+
+.contact-aurora__grain {
+  background-image:
+    linear-gradient(color-mix(in oklab, var(--color-foreground) 4%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--color-foreground) 4%, transparent) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(circle at var(--pointer-x) var(--pointer-y), black, transparent 55%);
+  opacity: 0.45;
+  transform: translate3d(calc(var(--shift-x) * -0.35), calc(var(--shift-y) * -0.35), 0);
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes contact-aurora-breathe {
+  from { filter: blur(30px) saturate(1); }
+  to { filter: blur(42px) saturate(1.18); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-aurora__wash {
+    animation: none;
+    transform: none;
+  }
+
+  .contact-aurora__grain {
+    transform: none;
+  }
+}

@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { Instagram, Mail, ArrowRight, Sparkles } from "lucide-react";
+import type { MouseEvent } from "react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -197,12 +198,37 @@ function Work() {
 }
 
 function Contact() {
+  const handlePointerMove = (event: MouseEvent<HTMLDivElement>) => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const x = ((event.clientX - bounds.left) / bounds.width) * 100;
+    const y = ((event.clientY - bounds.top) / bounds.height) * 100;
+
+    event.currentTarget.style.setProperty("--pointer-x", `${x}%`);
+    event.currentTarget.style.setProperty("--pointer-y", `${y}%`);
+    event.currentTarget.style.setProperty("--shift-x", `${(x - 50) * 0.12}px`);
+    event.currentTarget.style.setProperty("--shift-y", `${(y - 50) * 0.12}px`);
+  };
+
+  const resetPointer = (event: MouseEvent<HTMLDivElement>) => {
+    event.currentTarget.style.setProperty("--pointer-x", "50%");
+    event.currentTarget.style.setProperty("--pointer-y", "50%");
+    event.currentTarget.style.setProperty("--shift-x", "0px");
+    event.currentTarget.style.setProperty("--shift-y", "0px");
+  };
+
   return (
     <section id="contact" className="px-4 py-20 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-4xl">
-        <div className="relative overflow-hidden rounded-3xl border border-border/60 bg-card px-6 py-16 text-center shadow-xl sm:px-12">
-          <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/10 blur-3xl" />
-          <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-violet-300/20 blur-3xl" />
+        <div
+          className="contact-aurora relative overflow-hidden rounded-3xl border border-border/60 bg-card px-6 py-16 text-center shadow-xl sm:px-12"
+          onMouseMove={handlePointerMove}
+          onMouseLeave={resetPointer}
+        >
+          <div className="contact-aurora__wash" aria-hidden="true" />
+          <div className="contact-aurora__light" aria-hidden="true" />
+          <div className="contact-aurora__grain" aria-hidden="true" />
           <div className="relative">
             <p className="text-sm font-semibold uppercase tracking-wider text-primary">Contact</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">

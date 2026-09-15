@@ -44,14 +44,14 @@ function ArtworkDetail() {
         </Link>
 
         <div className="mt-8 grid gap-10 lg:grid-cols-[1fr_320px]">
-          <div className="relative overflow-hidden rounded-3xl border border-border/60 bg-card shadow-2xl">
-            <div className="relative">
+          <div className="relative self-start overflow-hidden rounded-3xl border border-border/60 bg-card shadow-2xl">
+            <div className="relative flex justify-center bg-secondary/30">
               <img
                 src={artwork.image}
                 alt={artwork.title}
                 width={1024}
                 height={1024}
-                className="aspect-square w-full object-cover"
+                className="h-auto max-h-[85vh] w-full object-contain"
                 style={{ viewTransitionName: `artwork-${artwork.id}` }}
               />
               {/* Watermark overlay */}

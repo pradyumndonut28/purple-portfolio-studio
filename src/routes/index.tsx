@@ -17,6 +17,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Portfolio of a young graphic designer exploring visual identity, typography, and digital art." },
       { property: "og:title", content: "Pradyumn Mathur — Graphic Design Portfolio" },
       { property: "og:description", content: "Portfolio of a young graphic designer exploring visual identity, typography, and digital art." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,

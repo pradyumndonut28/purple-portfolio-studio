@@ -99,6 +99,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
+    // Runs before first paint: dark by default, light only if the visitor chose it.
+    scripts: [
+      {
+        children: `(function(){var r=document.documentElement;try{if(localStorage.getItem("portfolio-theme")==="light"){r.classList.remove("dark");r.classList.add("light");return;}}catch(e){}r.classList.add("dark");})();`,
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -108,7 +114,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>

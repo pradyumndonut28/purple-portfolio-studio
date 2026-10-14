@@ -3,14 +3,14 @@ import { useTheme } from "./theme-provider";
 import { Button } from "@/components/ui/button";
 
 export function ThemeToggle() {
-  const { theme, toggleTheme } = useTheme();
+  const { toggleTheme } = useTheme();
 
   return (
     <Button
       variant="ghost"
       size="icon"
       onClick={toggleTheme}
-      aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+      aria-label="Toggle light/dark mode"
       className="rounded-full"
     >
       <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />

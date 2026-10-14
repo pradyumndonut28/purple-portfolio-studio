@@ -8,6 +8,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
+import { HeroLines } from "@/components/hero-lines";
 import { Instagram, Mail, ArrowRight, Sparkles } from "lucide-react";
 import type { MouseEvent } from "react";
 
@@ -36,33 +37,11 @@ function Index() {
   );
 }
 
-// One seamless wave tile (1200 wide). Two tiles are placed side by side so the
-// layer can drift left by exactly one tile and loop with no visible jump.
-const WAVE_TILE = "M0 60 C 200 0, 400 0, 600 60 S 1000 120, 1200 60 L1200 200 L0 200 Z";
-
-function HeroWaves() {
-  return (
-    <div className="hero-waves" aria-hidden="true">
-      {[1, 2, 3].map((layer) => (
-        <svg
-          key={layer}
-          className={`hero-wave hero-wave--${layer}`}
-          viewBox="0 0 2400 200"
-          preserveAspectRatio="none"
-        >
-          <path d={WAVE_TILE} />
-          <path d={WAVE_TILE} transform="translate(1200 0)" />
-        </svg>
-      ))}
-    </div>
-  );
-}
-
 function Hero() {
   return (
     <section className="relative overflow-hidden px-4 pb-20 pt-16 sm:px-6 sm:pt-24 lg:px-8 lg:pt-32">
       <div className="bg-gradient-radial pointer-events-none absolute inset-0 opacity-70" />
-      <HeroWaves />
+      <HeroLines />
       <div className="relative mx-auto max-w-5xl text-center">
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/50 px-4 py-1.5 text-sm font-medium text-muted-foreground backdrop-blur-sm">
           <Sparkles className="h-4 w-4 text-primary" />

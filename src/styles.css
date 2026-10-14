@@ -274,40 +274,24 @@
   }
 }
 
-/* Hero background waves: slow, constant horizontal drift in three layers. */
-.hero-waves {
+/* Hero background: flowing violet line-waves (see components/hero-lines.tsx) */
+.hero-lines {
   position: absolute;
   inset: 0;
   overflow: hidden;
   pointer-events: none;
-  /* fade the bottom edge so the hero blends into the next section */
-  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  /* fade out at the top (behind the headline) and at the very bottom */
+  mask-image: linear-gradient(to bottom, transparent 8%, black 45%, black 80%, transparent 100%);
 }
 
-.hero-wave {
-  position: absolute;
-  left: 0;
-  width: 200%; /* two tiles wide, so -50% is exactly one tile */
-  height: 58%;
-  animation: hero-wave-drift var(--wave-duration) linear infinite;
-  will-change: transform;
+.hero-lines svg {
+  width: 100%;
+  height: 100%;
 }
 
-.hero-wave path {
-  fill: color-mix(in oklab, var(--color-primary) var(--wave-opacity), transparent);
-}
-
-.hero-wave--1 { top: 34%; --wave-duration: 34s; --wave-opacity: 22%; }
-.hero-wave--2 { top: 46%; --wave-duration: 48s; --wave-opacity: 15%; animation-direction: reverse; }
-.hero-wave--3 { top: 58%; --wave-duration: 62s; --wave-opacity: 10%; }
-
-@keyframes hero-wave-drift {
-  from { transform: translate3d(0, 0, 0); }
-  to { transform: translate3d(-50%, 0, 0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-wave {
-    animation: none;
-  }
+.hero-lines path {
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 1.25;
+  vector-effect: non-scaling-stroke;
 }
